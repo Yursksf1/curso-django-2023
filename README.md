@@ -2,3 +2,4 @@
 
 Participantes: 
 - Yurley Sanchez: [Yursksf1](https://github.com/Yursksf1)
+- Horacio Mieles: [hjtoloza](https://github.com/hjtoloza)
