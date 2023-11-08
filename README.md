@@ -6,4 +6,5 @@ Participantes:
 - Yann Castellanos: [yannkarlo](https://github.com/YannKarlo)
 - Julian Jaimes: [Jotajaimes](https://github.com/Jotajaimes)
 - Julio Cesar Gonzalez : [Jcgonzalezb721](https://github.com/Jcgonzalezb721)
+- Edwin Jaimes: [Eijaimes](https://github.com/Eijaimes)
 
