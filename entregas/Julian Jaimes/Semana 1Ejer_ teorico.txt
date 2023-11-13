@@ -1,7 +1,0 @@
-1)	🤔 Preguntas Teóricas:
-A) Explica con tus palabras para que se usan los siguientes terminos en python:
-
-●	print: Imprimir en Pantalla
-●	if:  Evalúa una condición para ejecutar líneas de Código
-●	for:  Se usa para repetir unas líneas de Código n cantidad
-●	while: Ejecuta unas líneas de código si hay una condición
