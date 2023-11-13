@@ -1,0 +1,141 @@
+Taller 1
+Objetivo:
+-   	Hacer uso de las estructuras de programación	 en Python
+-   	Poner en práctica los conceptos aprendidos en sesiones de clase.
+ 
+Herramientas:
+-   	VsCode o cualquier editor de código.
+-   	Python
+-   	Git - GitHub
+
+
+
+1)	🤔 Preguntas Teóricas:
+A) Explica con tus palabras para que se usan los siguientes términos en python:
+
+●	print: lo utilizo para visualizar resultados en consola
+●	if: Lo utilizo para tomar decisiones como si es verdadero o cumple x condición realice una acción y en caso contrario realice o ejecute otra acción.
+●	for: es un ciclo que utilizó para ejecutar una cantidad X una porción de código.
+●	while:  es un ciclo condicional que utilizo cuando no tengo idea cuantas veces debo de ejecutar una parte del código a diferencia del for que se ejecuta X veces este ciclo puede ejecutarse varias veces hasta infinito.
+
+2)	🎯 Ejercicios Prácticos:
+	A continuación, vamos a hacer algunos ejercicios similares para poner en práctica lo que vimos en clase.
+
+-	Crea un programa en Python donde podamos Calcular promedios de la siguientes lista de numeros: 
+[ 1,2,3,4,4,5,6,7,8,4,3,2,4,4,4,5,6,7,2]
+ 
+#Ejercicio #1
+lista = [ 1,2,3,4,4,5,6,7,8,4,3,2,4,4,4,5,6,7,2]
+suma_de_num = 0
+suma_de_lista = sum(lista)
+print(suma_de_lista)
+
+cantidad_lista = len(lista)
+print(cantidad_lista)
+
+print ('El promedio de la lista es:  ',suma_de_lista / cantidad_lista)
+
+-	Crea un programa en Python donde podamos calcular el IMC de un adulto: 
+-	Peso: 80
+-	Altura: 150
+ 
+
+#Ejercicio #2
+altura = float(input ("Su altura en metros por favor: "))
+peso = float (input("Su masa en kilogramos por favor :"))
+
+print ('El indice de Masa Corporal es de:  ',altura / peso**2)
+
+-	Crea un programa en Python donde podamos almacenar informacion del usuarios List(diccionario). 
+-	nombre
+-	apellido
+-	edad 
+-	peso 
+-	altura
+
+-	Presentar las siguientes opciones: 
+-	Opcion 1) Agregar más usuarios
+-	Opcion 2) Listar usuario
+-	Opcion 3) Calcular el promedio de [edades, peso, alturas]
+-	Opcion 4) Calcular el IMC de cada usuario
+-	Opcion 0) Salir
+
+#Ejercicio #3
+
+
+e = input('Presiona :\n 1). para agregar un usuario \n 2). listar los usuarios \n 3). Calcular el promedio de [edades, peso, alturas] \n 4). Calcular el IMC de cada usuario \n 0). Salir\n')
+
+
+if e == 1 : 
+    usuarios = {
+    "nombres": [],
+    "apellidos": [],
+    "edades": [],
+    "pesos": [],
+    "alturas": []
+    }
+    tamaño = input('cuantos usuarios desea ingresar')
+    
+    for i in range(tamaño):
+        print("Ingrese los datos de la persona", i + 1)
+        nombre = input("Nombre: ")
+        apellido = input("apellido: ")
+        edad = input("edad: ")
+        peso = input("peso: ")
+        altura = input("altura: ")
+
+    
+        usuarios["nombres"].append(nombre)
+        usuarios["apellidos"].append(apellido)
+        usuarios["edades"].append(edad)
+        usuarios["pesos"].append(peso)
+        usuarios["alturas"].append(altura)
+
+elif e == 2:
+    for i in range(tamaño):
+        print("Mostrando los datos de la persona", i + 1)
+
+        print("Nombre:", usuarios["nombres"][i])
+        print("Apellido:", usuarios["apellidos"][i])
+        print("Edad:", usuarios["edades"][i])
+        print("Peso:", usuarios["pesos"][i])
+        print("Altura:", usuarios["alturas"][i])
+
+    print("Haz b")   
+
+elif e == 3:
+    
+        suma_de_num = 0
+        suma_de_edades = sum(edades)
+        suma_de_peso = sum(peso)
+        suma_de_altura = sum(altura)
+    
+        cantidad_edades = len(edades)
+        cantidad_pesos = len(peso)
+        cantidad_alturas = len(altura)
+    
+        print ('El promedio de las edades es:  ',suma_de_edades/ cantidad_edades)  
+        print ('El promedio de las edades es:  ',suma_de_edades/ cantidad_edades)  
+        print ('El promedio de las edades es:  ',suma_de_edades/ cantidad_edades)  
+
+elif e == 4:
+
+    cantidad_usuarios = len(usuarios)
+    
+    for i in range(cantidad_usuarios):
+        
+        print ('El indice de Masa Corporal es del:  ',usuarios, 'es de',alturas / pesos**2)
+                 
+
+else:
+    print('Feliz dia',e)
+
+ Reto:
+
+Publicar el proyecto en GitHub en tu repositorio en una carpeta de entregas:
+
+1)	Sincroniza el repositorio principal
+2)	Crea carpeta con tu nombre
+3)	Crea carpeta con el nombre semana 1
+4)	Sube el archivo con tu respuesta
+5)	crear el pull request
