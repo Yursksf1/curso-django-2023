@@ -1,0 +1,43 @@
+1)	🤔 Preguntas Teóricas:
+A) Explica con tus palabras para que se usan los siguientes terminos en python:
+
+●	print: Imprimir en Pantalla
+●	if:  Evalúa una condición para ejecutar líneas de Código
+●	for:  Se usa para repetir unas líneas de Código n cantidad
+●	while: Ejecuta unas líneas de código si hay una condición
+
+
+2)	A continuación, vamos a hacer algunos ejercicios similares para poner en práctica lo que vimos en clase.
+
+-	Crea un programa en Python donde podamos Calcular promedios de la siguientes lista de numeros: 
+[ 1,2,3,4,4,5,6,7,8,4,3,2,4,4,4,5,6,7,2]
+
+3)-	Crea un programa en Python donde podamos calcular el IMC de un adulto: 
+
+4)-	Crea un programa en Python donde podamos almacenar informacion del usuarios List(diccionario). 
+-	nombre
+-	apellido
+-	edad 
+-	peso 
+-	altura
+
+-	Presentar las siguientes opciones: 
+-	Opcion 1) Agregar más usuarios
+-	Opcion 2) Listar usuario
+-	Opcion 3) Calcular el promedio de [edades, peso, alturas]
+-	Opcion 4) Calcular el IMC de cada usuario
+-	Opcion 0) Salir
+
+5) Reto:
+
+Publicar el proyecto en GitHub en tu repositorio en una carpeta de entregas:
+
+1)	Sincroniza el repositorio principal
+2)	Crea carpeta con tu nombre
+3)	Crea carpeta con el nombre semana 1
+4)	Sube el archivo con tu respuesta
+5)	crear el pull request
+
+
+
+
