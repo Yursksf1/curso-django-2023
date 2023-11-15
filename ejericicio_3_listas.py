@@ -23,3 +23,6 @@ for i in my_lista:
 print('total de edades: ', suma_edad)
 print('total de registros: ', len(my_lista))
 print('promedios de edades: ', suma_edad/len(my_lista))
+
+promedio = sum([item['edad'] for item in my_lista])/len(my_lista)
+print('promedios de edades v2: ', suma_edad/len(my_lista))
