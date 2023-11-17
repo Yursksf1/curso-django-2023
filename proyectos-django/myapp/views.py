@@ -21,6 +21,13 @@ def home(request):
     usuarios = Usuario.objects.all()
     for usuario in usuarios:
 
-        mensaje_respuesta = "{} {}: {} </br>".format(mensaje_respuesta, usuario.nombre, usuario.edad)
+        mensaje_respuesta = "{} {} {} </br>".format(mensaje_respuesta, usuario.nombre, usuario.edad)
 
     return HttpResponse(mensaje_respuesta)
+
+
+''' ACTIVIDAD:
+- Crear una vista con la informacion de los modelos haciendo uso del modelo de usuarios.
+visualizar un listado de usuarios que muestre, el nombre, la edad, el peso, la altura y el IMC 
+
+'''
