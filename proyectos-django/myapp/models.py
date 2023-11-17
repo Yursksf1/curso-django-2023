@@ -11,7 +11,7 @@ class Usuario(models.Model):
     
 
 class HorasTrabajada(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='horas_trabajadas')
     total_horas = models.PositiveIntegerField()
     dia = models.DateField()
 
