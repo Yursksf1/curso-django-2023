@@ -29,6 +29,29 @@ def home(request):
 
     return HttpResponse(mensaje_respuesta)
 
+def calcular_imc(altura, peso):
+    if altura == 0:
+        return 0
+    altura = altura/100
+    imc = peso/(altura**2)
+    return round(imc, 2)
+
+
+def imc(request):
+    mensaje_respuesta = '<h1> Solucion Ejercicio IMC </h1> </br>'
+    usuarios = Usuario.objects.all()
+    for usuario in usuarios:
+        mensaje_respuesta = "{} nombre: {}, edad: {}, altura: {},  peso: {},  IMC: {}, </br>".format(
+                mensaje_respuesta, 
+                usuario.nombre, 
+                usuario.edad, 
+                usuario.altura,
+                usuario.peso,
+                calcular_imc(usuario.altura, usuario.peso)
+            )
+
+    return HttpResponse(mensaje_respuesta)
+
 
 ''' ACTIVIDAD:
 - Crear una vista con la informacion de los modelos haciendo uso del modelo de usuarios.
