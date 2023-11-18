@@ -20,8 +20,12 @@ def home(request):
     mensaje_respuesta = '<h1> Bienvenido al curso de django 2023 </h1> </br>'
     usuarios = Usuario.objects.all()
     for usuario in usuarios:
+        total_horas_trabajadas = 0
+        horas_trabajadas = usuario.horastrabajada_set.all()
+        for ht in horas_trabajadas:
+            total_horas_trabajadas = total_horas_trabajadas + ht.total_horas
 
-        mensaje_respuesta = "{} {} {} </br>".format(mensaje_respuesta, usuario.nombre, usuario.edad)
+        mensaje_respuesta = "{} nombre: {}, edad: {}, horasT: {}</br>".format(mensaje_respuesta, usuario.nombre, usuario.edad, total_horas_trabajadas)
 
     return HttpResponse(mensaje_respuesta)
 
