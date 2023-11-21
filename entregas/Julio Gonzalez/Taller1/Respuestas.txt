@@ -1,0 +1,9 @@
+Explica con tus palabras para que se usan los siguientes terminos en python:
+
+●	print: Instrucción que permite imprimir  por consola un texto.
+
+●	if: Es una estructura que le permite tener una condición de verdadero o falso para ejecutar un conjunto de sentencias.
+
+●	for: Es una instrucción que permite ejecutar otras instrucciones la veces que se le definen.
+
+●	while: Es una estructura que le permite ejecutar una serie de instrucciones hasta que se cumpla.
