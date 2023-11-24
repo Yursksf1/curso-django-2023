@@ -1,8 +1,9 @@
 from django.contrib import admin
-from myapp.models import Usuarios
+from myapp.models import Usuario, HorasTrabajada
 # Register your models here.
 
 class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ['id', 'nombre', 'edad', 'altura']
+    list_display = ['id', 'nombre', 'edad', 'altura', 'peso']
 
-admin.site.register(Usuarios, UsuarioAdmin)
+admin.site.register(Usuario, UsuarioAdmin)
+admin.site.register(HorasTrabajada)
