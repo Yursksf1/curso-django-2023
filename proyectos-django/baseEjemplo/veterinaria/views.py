@@ -8,8 +8,38 @@ from django.http import (
 # Create your views here.
 
 def index(request):
-    messsage = "Hola mundo aca vamos a renderizar los registros de los propietarios"
+    messsage_base = """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <h1> Programa de veterinaria 0.1 </h1>
 
+            <h2> 
+                Propietarios
+            </h2>
+            <p>
+            {}
+            </p>
+            <h2> 
+                Mascotas
+            </h2>
+            <p>
+            {}
+            </p>
+        </body>
+        </html>
+    """
+    usuarios = ["Yurley", "Juan"]
+    mascotas = ["Manchitas", "patitas", "micho"]
+    
+    messsage = messsage_base.format(
+        usuarios, mascotas
+    )
 
     # Your code is here
     '''
