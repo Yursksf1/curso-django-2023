@@ -4,6 +4,5 @@ from myapp import views
 
 urlpatterns = [
     path('', views.index ),
-    path('Imc', views.Imc ),
     path('Horas', views.Horas ),
 ]
