@@ -8,7 +8,8 @@ from django.http import (
     HttpResponseRedirect,
 )
 # Create your views here.
-from myapp.models import Usuario
+from myapp.models import suscriptore
+
 
 def index(request):
     mensaje = 'Titulo'
@@ -20,13 +21,13 @@ def index(request):
  
 def Horas(request):
     mensaje_respuesta = '<h1> Calculo pago usurio </h1> </br>'
-    usuarios = Usuario.objects.all()
+    usuarios = suscriptore.objects.all()
     for usuario in usuarios:
         total_horas_trabajadas=0
-        horas_trabajadas=usuario.horastrabajada_set.all()
+        horas_trabajadas=usuario.horas_entrenamiento_set.all()
         for ht in horas_trabajadas:
             total_horas_trabajadas=total_horas_trabajadas + ht.total_horas 
-            Valor_horas=total_horas_trabajadas*usuario.valor_x_hora   
-            mensaje_respuesta = "{} Mi nombre es {}, He trabajado {} horas extras y el valor es de $ {}</br>".format(mensaje_respuesta, usuario.nombre,total_horas_trabajadas,Valor_horas)           
+            Valor_horas=total_horas_trabajadas 
+        mensaje_respuesta = "{} Mi nombre es {}, He trabajado {} horas extras y el valor es de $ {}</br>".format(mensaje_respuesta, usuario.nombre,total_horas_trabajadas,Valor_horas)           
 
     return HttpResponse(mensaje_respuesta)
