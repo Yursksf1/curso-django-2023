@@ -12,11 +12,64 @@ from myapp.models import suscriptore
 
 
 def index(request):
-    mensaje = 'Titulo'
-    for i in range(10):
-        if i % 2 != 0:
-            mensaje = "{} </br> {} ".format(mensaje, i)
+    t_hora=0
+    cant_user=0
+    mensaje = '<h1> Calculo de pago  </h1> </br>'
+    usuarios = suscriptore.objects.all()
+    for usuario in usuarios:
+        cant_user=cant_user+1
+        Vlor_sin=0
+        total_horas_trabajadas=0
+        print(usuario)
+        horas_trabajadas=usuario.horas_entrenamiento_set.all()
+        print( horas_trabajadas)
+        for ht in horas_trabajadas:
+            
+            print(ht)
+            horas_trabajadas=total_horas_trabajadas + ht.total_horas 
+            t_hor_trabaja=horas_trabajadas
+        t_hora=t_hora+ ht.total_horas 
+    
+    Prom=t_hora/cant_user
+    mensaje='''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
 
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>{}</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>{}</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>{}</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>'''.format(cant_user,t_hora,Prom)
+    
     return HttpResponse(mensaje)
  
 def Horas(request):
