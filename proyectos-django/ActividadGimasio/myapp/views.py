@@ -12,10 +12,12 @@ from myapp.models import suscriptore
 
 
 def index(request):
-    print(1)
-    variable = "valor de mi variable"
+    usuario = suscriptore.objects.first()
+    variable = "Hola mundo, mi nombre es"
     context = {
-        "variable": variable
+        "variable": variable,
+        "nombre": usuario.nombre,
+        # "nombre2": 123
     }
     return render(request, 'myapp/index.html', context)
 
