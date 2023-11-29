@@ -20,6 +20,7 @@ def index(request):
     return HttpResponse(mensaje)
  
 def Horas(request):
+    Tabla=''
     mensaje_respuesta = '<h1> Calculo de pago  </h1> </br>'
     usuarios = suscriptore.objects.all()
     for usuario in usuarios:
@@ -51,7 +52,58 @@ def Horas(request):
             Des=Vlor_sin-Vlor_des
             Tipo='Oro'
         mensaje_respuesta = "{} Tu nombre es {}, llevas entrenado {} horas, el valor de tu factura es {} y el descuento por cliente {} es de {}</br>".format(mensaje_respuesta, usuario.nombre,t_hor_trabaja,Vlor_des,Tipo,Des)
-    
+        
+        Tabla=''' {}<tr>
+        
+        <td>{}</td>
+        <td>{}</td>
+        <td>{}</td>
+        <td>{}</td>
+        <td>{}</td>
+        </tr>
+        '''.format(Tabla, usuario.nombre,t_hor_trabaja,Vlor_des,Tipo,Des)
+    mensaje_respuesta='''
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+
+
+<div class="container mt-3">
+<h2>Ejemplo</h2>
+<p>Resumen horas:</p>          
+<table class="table">
+  <thead>
+    <tr>
+      
+      <th>Nombre</th>
+      <th>Numero de Horas</th>
+      <th>valor total</th>
+      <th>Tipo suscripción</th>
+      <th>Descuento</th>
+    </tr>
+  </thead>
+  <tbody>
+  {}
+  </tbody>
+</table>
+</div>
+
+
+
+
+</body>
+</html>
+
+'''.format(Tabla)
 
         
                 
