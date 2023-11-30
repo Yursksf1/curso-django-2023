@@ -104,7 +104,7 @@ def Horas(request):
             Vlor_des=2000*t_hor_trabaja
             Des=Vlor_sin-Vlor_des
             Tipo='Oro'
-        mensaje_respuesta = "{} Tu nombre es {}, llevas entrenado {} horas, el valor de tu factura es {} y el descuento por cliente {} es de {}</br>".format(mensaje_respuesta, usuario.nombre,t_hor_trabaja,Vlor_des,Tipo,Des)
+        #mensaje_respuesta = "{} Tu nombre es {}, llevas entrenado {} horas, el valor de tu factura es {} y el descuento por cliente {} es de {}</br>".format(mensaje_respuesta, usuario.nombre,t_hor_trabaja,Vlor_des,Tipo,Des)
         
         Tabla=''' {}<tr>
         
@@ -161,3 +161,107 @@ def Horas(request):
         
                 
     return HttpResponse(mensaje_respuesta)
+
+def Imc(request):
+    Tabla2=''
+    horas_trabajada=0
+    t_hor_trabaja=0
+    
+    #mensaje_respuesta = '<h1> Bienvenido al curso de django 2023 </h1> </br>'
+    usuarios = suscriptore.objects.all()
+    for usuario in usuarios:
+
+        Imc= float(usuario.peso/(usuario.altura*usuario.altura)*100)
+        #mensaje_respuesta = "{} Mi nombre es {} tengo {} años, mido {} y peso {}, El resulatado de IMC es {}</br>".format(mensaje_respuesta, usuario.nombre, usuario.edad, usuario.altura, usuario.peso,Imc)
+        
+        total_horas_trabajadas=0
+        horas_trabajadas=usuario.horas_entrenamiento_set.all()
+        for ht in horas_trabajadas:
+            print(ht)
+            total_horas_trabajadas=total_horas_trabajadas + ht.total_horas 
+            
+        #t_hora=t_hora+ ht.total_horas 
+        
+
+
+        Tabla2=''' {}<tr>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            </tr>
+            '''.format(Tabla2, usuario.nombre,usuario.edad, usuario.altura, usuario.peso,Imc,total_horas_trabajadas)
+        mensaje_respuesta='''
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+
+
+<div class="container mt-3">
+<h2>Ejemplo</h2>
+<p>Resumen horas:</p>          
+<table class="table">
+  <thead>
+    <tr>
+      
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Altura</th>
+      <th>Peso</th>
+      <th>IMC</th>
+      <th>Total horas</th>
+    </tr>
+  </thead>
+  <tbody>
+  {}
+  </tbody>
+</table>
+</div>
+
+
+
+
+</body>
+</html>
+
+'''.format(Tabla2)
+    return HttpResponse(mensaje_respuesta)  
+
+
+def indexx(request):
+    Tabla2=''
+    horas_trabajada=0
+    t_hor_trabaja=0
+    aa=""
+    #mensaje_respuesta = '<h1> Bienvenido al curso de django 2023 </h1> </br>'
+    usuarios = suscriptore.objects.all()
+    for usuario in usuarios:
+
+        Imc= float(usuario.peso/(usuario.altura*usuario.altura)*100)
+        #mensaje_respuesta = "{} Mi nombre es {} tengo {} años, mido {} y peso {}, El resulatado de IMC es {}</br>".format(mensaje_respuesta, usuario.nombre, usuario.edad, usuario.altura, usuario.peso,Imc)
+        
+        total_horas_trabajadas=0
+        horas_trabajadas=usuario.horas_entrenamiento_set.all()
+        for ht in horas_trabajadas:
+            total_horas_trabajadas=total_horas_trabajadas + ht.total_horas 
+               
+            context = {
+                "a": usuario.nombre,
+                "b": usuario.altura,
+                "c": usuario.peso,
+                "d": Imc,
+                "e": total_horas_trabajadas,
+
+                 }
+    return render(request, 'myapp/indexx.html', context)
