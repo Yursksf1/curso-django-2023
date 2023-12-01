@@ -12,11 +12,21 @@ from myapp.models import suscriptore
 
 
 def index(request):
-    usuario = suscriptore.objects.first()
+    condicion = True
+    usuarios = suscriptore.objects.all()
     variable = "Hola mundo, mi nombre es"
+    my_list = [1,2,3,4,5,'hola',7,8,9,'mundo']
+
+
+    for ln in my_list:
+        # your code is here 
+        print(ln)
+
     context = {
         "variable": variable,
-        "nombre": usuario.nombre,
+        "usuarios": usuarios,
+        "condicion": condicion,
+        "my_list": my_list,
         # "nombre2": 123
     }
     return render(request, 'myapp/index.html', context)

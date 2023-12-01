@@ -9,8 +9,39 @@
     <h1>
         Titulo
     </h1>
-    <p> mensaje </p>
-    <p> {{variable}}</p>
-    <p> {{nombre}}</p>
+    {{variable}}
+    <div id="mydiv">
+        esto tiene contenido
+    </div>
+    <h2> Aca va el if </h2>
+
+    {% if condicion %}
+        # se cumple
+        <script>
+            console.log('hola mundo')   
+            document.getElementById('mydiv').textContent = 'el valor cambio'
+        </script>
+    {% else %}
+        # no se cumpla
+    {% endif %}
+
+    <h2> Aca va el for </h2>
+    {% for item in my_list %}
+        <br> un texto, {{ item }}
+        
+    {% endfor %}
+
+    <h2> Aca va el for de usuario </h2>
+    {% for usuario in usuarios %}
+        <br> un usuario, {{ usuario.nombre }} - {{ usuario.edad }}
+        {% if usuario.edad > 30 %}
+            333
+        {% else %}
+            22
+        {% endif %}
+
+        <br>
+    {% endfor %}
+    
 </body>
 </html>
