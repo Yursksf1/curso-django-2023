@@ -11,8 +11,9 @@ class suscriptore(models.Model):
     barrio = models.CharField(max_length=15, default=0)
     ciudad = models.CharField(max_length=15, default=0)
     #valor_x_hora = models.PositiveIntegerField(default=30000)
+    
     def __str__(self) -> str:
-        return self.nombre
+        return "{} {}".format(self.nombre, self.edad)
     
 
 class Horas_entrenamiento(models.Model):
