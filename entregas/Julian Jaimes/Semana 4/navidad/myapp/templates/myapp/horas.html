@@ -10,31 +10,27 @@
 <body>
 {% include 'myapp/nav.html'%}
 <div class="container mt-3">
-<h2>Ejemplo</h2>
+<h2>Horas</h2>
 <p>Resumen horas:</p>          
 <table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Edad</th>
-      <th>Altura</th>
-      <th>Dirección</th>
-      <th>Barrio</th>
-      <th>Peso</th>
-      <th>Ciudad</th>
-    </tr>
+      <th>Horas trabajada</th>
+      <th>Valor</th>
+      <th>Mendresia</th>
+      <th>Descuento</th>
+     </tr>
   </thead>
   <tbody>
-    {% for u_ser in mi_list %}
+    {% for u_ser1 in mi_list %}
     <tr>
-      <td>{{u_ser.nombre}}</td>
-      <td>{{u_ser.edad}}</td>
-      <td>{{u_ser.altura}}</td>
-      <td>{{u_ser.peso}}</td>
-      <td>{{u_ser.ciudad}}</td>
-      <td>{{u_ser.dirección}}</td>
-      <td>{{u_ser.barrio}}</td>
-     </tr>
+      <td>{{u_ser1.nombre}}</td>
+      <td>{{u_ser1.t_hor_trabaja}}</td>
+      <td>{{u_ser1.Vlor_des}}</td>
+      <td>{{u_ser1.Tipo}}</td>
+      <td>{{u_ser1.Des}}</td>
+    </tr>
     {% endfor %}   
   </tbody>
 </table>
