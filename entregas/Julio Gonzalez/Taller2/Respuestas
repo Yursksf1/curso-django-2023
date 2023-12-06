@@ -1,0 +1,13 @@
+Explica con tus palabras para que se usan los siguientes archivos en django, para que los has usado? que defines allí?:
+
+●	models.py: 
+Es donde se crea la base de datos que va a utilizar en el proyecto. En el se definen las tablas, campos y relaciones entre las tablas 
+
+●	views.py: Donde se definen las peticiones httprequest
+
+●	urls.py: 
+Se usa para llamar las vistas y es donde se definen las rutas que se van a llamar desde el navegador.
+
+●	settings.py: 
+Es un archivo de configuración del proyecto. Ahí se puede definir varias cosas como con cual motor de base de datos desea trabajar.
+

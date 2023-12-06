@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+<title>Fiestas Navideñas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style = "background-image: url('{% static "imagenes/Navidad.jpg" %}'); background-size: cover;">
+    {% include "myapp/nav.html" %}
+    <div class="container mt-3">
+        <h1 style="color:rgb(255, 255, 255);">{{variable}}</h1>
+        <br><br>
+        <h5 class="epigraph" style="color:rgb(255, 255, 255);">Las fiestas navideñas están al caer y las calles hace semanas que están inundadas de luces,
+            villancicos y adornos que así nos lo recuerdan. 
+            El espíritu de la Navidad invita estos días a rodearse de la familia y amigos, 
+            una tradición a la que el buscador más famoso de internet se ha sumado. Google ha creado para estos días tan señalados un Doodle muy especial.
+        </h5>
+        <br><br>
+        <h5 style="color:rgb(255, 255, 255);;">
+            Los que hoy traten de utilizar esta herramienta de búsqueda verán que está decorada con tres ilustraciones diferentes de una familia muy dispar.
+            Dos pingüinos hermanos deciden reunirse con sus parientes de clima cálido y su aventura se inicia hoy, 18 de diciembre. 
+            Ya tienen la maleta y los billetes listos y en las próximas fechas señaladas desde el gigante tecnológico ofrecerán nuevas ilustraciones para ver cómo les va.
+        </h5>
+        <br><br>
+        <img src="{% static "imagenes/imagen.jpg" %}",  width="300" height="400"> 
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
+</body>
+</html>
+    
