@@ -5,8 +5,11 @@ from django.http import (
     HttpResponsePermanentRedirect,
     HttpResponseRedirect,
 )
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
+@login_required
 def index(request):
     messsage_base = """
         <!DOCTYPE html>
@@ -31,6 +34,7 @@ def index(request):
             <p>
             {}
             </p>
+            
         </body>
         </html>
     """
@@ -47,3 +51,14 @@ def index(request):
     '''
 
     return HttpResponse(messsage)
+
+
+
+# para cerrar sesion debemos agregar esto en los templates
+"""
+    <li class="nav-item rol-icon">
+        <a class="nav-link active" href="{% url 'logout' %}">
+            Salir <br> <i class="fa fa-3x fa-sign-out" aria-hidden="true"></i>
+        </a>
+    </li>
+"""
