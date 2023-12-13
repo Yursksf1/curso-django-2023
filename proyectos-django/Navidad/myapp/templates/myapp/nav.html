@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)"> {{variable}}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/My_Navidad">My_Navidad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Canciones">Canciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Cocina">Cocina</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Regalos">Regalos</a>
+          </li>
+        </ul>
+        {% if request.user.username %}
+          <button class="btn btn-primary" type="button"> {{ request.user.username }} </button>
+        {% endif %}
+      </div>
+    </div>
+  </nav>

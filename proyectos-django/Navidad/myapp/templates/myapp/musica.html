@@ -1,0 +1,25 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<div class="container mt-3">
+<h2>VILLANCICOS</h2>
+<p>Lista de reproducción</p>          
+<table class="table">
+  <thead>
+    <tr>
+      <th>VILLANCICOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for u_se in rega %}
+    <tr>
+      <td><a href="{{u_se.url}}">{{u_se.cancion}}</a></td>
+    </tr>
+    {% endfor %}   
+  </tbody>
+</table>
+</div>
+
+
+
+
+{% endblock %}
