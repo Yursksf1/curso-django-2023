@@ -7,16 +7,16 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/My_Navidad">My_Navidad</a>
+            <a class="nav-link" href="{% url 'app:my_navidad' %}">My_Navidad</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Canciones">Canciones</a>
+            <a class="nav-link" href="{% url 'app:canciones' %}">Canciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Cocina">Cocina</a>
+            <a class="nav-link" href="{% url 'app:cocina' %}">Cocina</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Regalos">Regalos</a>
+            <a class="nav-link" href="{% url 'app:regalos' %}">Regalos</a>
           </li>
         </ul>
         {% if request.user.username %}
