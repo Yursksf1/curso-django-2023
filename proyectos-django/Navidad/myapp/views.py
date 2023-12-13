@@ -97,6 +97,28 @@ def Cocina_receta(request, id_receta):
 
     return render(request, 'myapp/recetas_detail.html', context)
 
+def Cocina_create(request):
+    mensaje = "RECETAS - crear"
+
+    if request.method == 'POST':
+        data_receta  = request.POST
+        # definir los atributos del nuevo registro
+        receta = data_receta.get('receta')
+        decripcion =  data_receta.get('decripcion')
+
+        # crear el registro 
+        rc = Receta()
+        rc.receta = receta
+        rc.decripcion = decripcion
+        rc.save()
+
+    context = {
+        "rega": None,
+        "mensaje": mensaje,
+    }
+
+    return render(request, 'myapp/recetas_create.html', context)
+
 def My_Navidad(request):
     #usuarios = Usuario.objects.all()
     mensaje = "BIENVENIDOS"

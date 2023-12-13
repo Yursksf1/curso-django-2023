@@ -1,0 +1,51 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>{{mensaje}}</h1>
+  <p></p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    
+    aca un formulario
+
+    <form class="form-horizontal my-4" method="post">
+      {% csrf_token %}
+
+      <div class="form-group">
+          <label for="receta">Nombre</label>
+          <div class="input-group mb-3">
+
+
+              <input type="text" class="form-control" name="receta"
+                     placeholder="Nombre">
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="decripcion">Descripcion</label>
+        <div class="input-group mb-3">
+
+
+            <input type="text" class="form-control" name="decripcion"
+                   placeholder="Descripcion">
+        </div>
+    </div>
+
+      <div class="form-group mb-0 row">
+          <div class="text-muted text-center">
+              <button class="btn btn-primary" type="submit">
+
+                  Guardar
+              </button>
+          </div>
+      </div>
+  </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
