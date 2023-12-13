@@ -9,5 +9,6 @@ urlpatterns = [
     path('', views.My_Navidad, name='my_navidad'),
     path('Cancion', views.Canciones, name='canciones' ),
     path('Cocina', views.Cocina, name='cocina' ),
+    path('Cocina/<int:id_receta>', views.Cocina_receta, name='cocina_receta' ),
     path('Regalos', views.Regalos, name='regalos'),    
 ]

@@ -14,7 +14,11 @@
 
     <div class="col-sm-4">
       
-      <h3>{{u_ser.receta}}</h3>
+      <h3>
+          <a href="{% url 'app:cocina_receta'  u_ser.id %}">
+            {{u_ser.receta}}
+          </a>
+        </h3>
       <p>{{u_ser.decripcion}}</p>
       
       

@@ -1,0 +1,22 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>{{mensaje}}</h1>
+  <p></p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    
+    <h2 class="text-center">
+      {{ rega.receta }}
+    </h2>
+   <p>  {{ rega.decripcion }} </p>
+    
+  </div>
+</div>
+
+
+
+{% endblock %}

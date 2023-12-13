@@ -79,11 +79,23 @@ def Cocina(request):
     rega = Receta.objects.all()
     mensaje = "RECETAS"
     context = {
-    "rega": rega,
-    "mensaje": mensaje,
+        "rega": rega,
+        "mensaje": mensaje,
 
     }
     return render(request, 'myapp/recetas.html', context)
+
+def Cocina_receta(request, id_receta):
+    rega = Receta.objects.filter(id = id_receta).first()
+    mensaje = "RECETAS - Detalle"
+    context = {
+        "rega": None,
+        "mensaje": mensaje,
+    }
+    if rega:
+        context["rega"] = rega
+
+    return render(request, 'myapp/recetas_detail.html', context)
 
 def My_Navidad(request):
     #usuarios = Usuario.objects.all()
