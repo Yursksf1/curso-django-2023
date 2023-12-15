@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -111,6 +111,8 @@ def Cocina_create(request):
         rc.receta = receta
         rc.decripcion = decripcion
         rc.save()
+        
+        return redirect("app:cocina")
 
     context = {
         "rega": None,
