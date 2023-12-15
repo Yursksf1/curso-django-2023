@@ -121,6 +121,35 @@ def Cocina_create(request):
 
     return render(request, 'myapp/recetas_create.html', context)
 
+def Cocina_import(request):
+    mensaje = "RECETAS - Import"
+
+    if request.method == 'POST':
+        receta_import_file = request.FILES["receta_import_file"]
+        # TODO: Agregar validacion sobre el archivo: ej: https://pythoncircle.com/post/30/how-to-upload-and-process-the-csv-file-in-django/
+
+        file_data = receta_import_file.read().decode("utf-8")
+        lines = file_data.split("\n")
+        for line in lines:
+            records_values = line.split(',')
+            receta = records_values[0]
+            decripcion = records_values[1]
+
+            rc = Receta()
+            rc.receta = receta
+            rc.decripcion = decripcion
+            rc.save()
+
+
+        return redirect("app:cocina")
+
+    context = {
+        "rega": None,
+        "mensaje": mensaje,
+    }
+
+    return render(request, 'myapp/recetas_import.html', context)
+
 def My_Navidad(request):
     #usuarios = Usuario.objects.all()
     mensaje = "BIENVENIDOS"

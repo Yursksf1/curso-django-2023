@@ -11,5 +11,6 @@ urlpatterns = [
     path('Cocina', views.Cocina, name='cocina' ),
     path('Cocina/<int:id_receta>', views.Cocina_receta, name='cocina_receta' ),
     path('Cocina/create/', views.Cocina_create, name='cocina_create' ),
+    path('Cocina/import/', views.Cocina_import, name='cocina_import' ),
     path('Regalos', views.Regalos, name='regalos'),    
 ]
