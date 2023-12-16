@@ -162,4 +162,11 @@ def My_Navidad(request):
     "mensaje": mensaje,
     }
     return render(request, 'myapp/regalos.html', context)
-    
+
+
+
+# Actividad:
+'''
+- Crear formularios, para permitir a los usiarios agregar regalos que desearian recibir en navidad. 
+
+'''
