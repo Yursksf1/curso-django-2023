@@ -104,7 +104,7 @@ def Cocina_create(request):
         data_receta  = request.POST
         # definir los atributos del nuevo registro
         receta = data_receta.get('receta')
-        decripcion =  data_receta.get('decripcion')
+        decripcion = data_receta.get('decripcion')
 
         # crear el registro 
         rc = Receta()

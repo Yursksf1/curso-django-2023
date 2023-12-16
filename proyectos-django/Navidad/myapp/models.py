@@ -27,6 +27,7 @@ class Regalo(models.Model):
 class Receta(models.Model):
     receta=models.CharField(max_length=50, default="")
     decripcion = models.CharField(max_length=200, default="")
+    puntuacion = models.PositiveIntegerField()
     
     
     
