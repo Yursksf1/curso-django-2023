@@ -54,7 +54,13 @@
 
   </div>
 </div>
+<p> ======================== </p>
 
 
+    <form class="form-horizontal my-4" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
 
 {% endblock %}

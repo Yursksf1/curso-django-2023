@@ -13,7 +13,7 @@ from myapp.models import Usuario
 from myapp.models import Cancion
 from myapp.models import Receta
 from myapp.models import Regalo
-
+from myapp.forms import RecetaForm
 
 @login_required
 def index(request):
@@ -101,7 +101,7 @@ def Cocina_create(request):
     mensaje = "RECETAS - crear"
 
     if request.method == 'POST':
-        data_receta  = request.POST
+        data_receta = request.POST
         # definir los atributos del nuevo registro
         receta = data_receta.get('receta')
         decripcion = data_receta.get('decripcion')
@@ -115,10 +115,12 @@ def Cocina_create(request):
         rc.save()
 
         return redirect("app:cocina")
+    form = RecetaForm()
 
     context = {
         "rega": None,
         "mensaje": mensaje,
+        "form": form,
     }
 
     return render(request, 'myapp/recetas_create.html', context)
