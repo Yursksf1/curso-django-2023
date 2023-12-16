@@ -105,13 +105,15 @@ def Cocina_create(request):
         # definir los atributos del nuevo registro
         receta = data_receta.get('receta')
         decripcion = data_receta.get('decripcion')
+        puntuacion = data_receta.get('puntuacion')
 
         # crear el registro 
         rc = Receta()
         rc.receta = receta
         rc.decripcion = decripcion
+        rc.puntuacion = puntuacion
         rc.save()
-        
+
         return redirect("app:cocina")
 
     context = {
